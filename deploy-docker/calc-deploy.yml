@@ -1,0 +1,8 @@
+---
+- name: Pull docker image of Calculator
+  hosts: all
+  tasks:
+    - name: Pull image
+      docker_image:
+        name: 8209820403/calculator
+        source: pull
