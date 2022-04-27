@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Calculator {
 
-    private static final Logger logger = LogManager.getLogger(Calculator.class);
+    private static final Logger LOGGER = LogManager.getLogger(Calculator.class);
     public Calculator() {
     }
 
@@ -71,31 +71,27 @@ public class Calculator {
 
 
     public double factoral(double number1) {
-        logger.info("[FACTORIAL] - " + number1);
         double result = fact(number1);
-        logger.info("[RESULT - FACTORIAL] - " + result);
+        LOGGER.info("Factorial - Input :" + number1 + " Output :" + result);
         return result;
     }
 
 
 
     public double sqroot(double number1) {
-        logger.info("[SQ ROOT] - " + number1);
         double result = Math.sqrt(number1);
-        logger.info("[RESULT - SQ ROOT] - " + result);
+        LOGGER.info("Square root - Input : " + number1 + " Output :" + result);
         return result;
     }
 
 
     public double power(double number1, double number2) {
-        logger.info("[POWER - " + number1 + " RAISED TO] " + number2);
         double result = Math.pow(number1,number2);
-        logger.info("[RESULT - POWER] - " + result);
+        LOGGER.info("Power - Input :" + number1 + " " + number2 + " Output :" + result);
         return result;
     }
 
     public double naturalLog(double number1) {
-        logger.info("[NATURAL LOG] - " + number1);
         double result = 0;
         try {
 
@@ -109,7 +105,7 @@ public class Calculator {
         } catch (ArithmeticException error) {
             System.out.println("[EXCEPTION - LOG] - Cannot find log of negative numbers " + error.getLocalizedMessage());
         }
-        logger.info("[RESULT - NATURAL LOG] - " + result);
+        LOGGER.info("Square root - Input : " + number1 + " Output :" + result);
         return result;
     }
     public double fact(double num) {
